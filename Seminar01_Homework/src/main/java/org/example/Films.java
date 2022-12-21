@@ -1,7 +1,9 @@
 package org.example;
 
 
-public class Films {
+import java.util.Iterator;
+
+public class Films implements Iterator<String > {
     String name, producer, genre, year;
 
     Films(String name, String producer, String genre, String year){
@@ -48,4 +50,19 @@ public class Films {
         }
     }
 
+    int index;
+    @Override
+    public boolean hasNext() {
+        return index++ < 4;
+    }
+
+    @Override
+    public String next() {
+        switch (index){
+            case 1: return String.format("Name: %s", name);
+            case 2: return String.format("Producer: %s", producer);
+            case 3: return String.format("Genre: %s", genre);
+            default: return String.format("Year: %s", year);
+        }
+    }
 }
