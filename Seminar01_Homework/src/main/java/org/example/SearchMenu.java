@@ -12,5 +12,4 @@ public class SearchMenu {
         String text = scan.nextLine();
         sh.searchBy(films, text);
     }
-
 }

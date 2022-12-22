@@ -1,18 +1,20 @@
 package org.example;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+
+import static java.util.Collections.sort;
 
 
 public class PrintFillSet {
 
     public void print(HashSet<Films> fl){
 
-        for (Films element: fl){
+        LinkedList<Films> list = new LinkedList<>(fl);
+        sort(list);
+        for (Films element: list){
             System.out.println("--------------------/////---------------------");
-            while(element.hasNext()){
-                System.out.println(element.next());
-            }
-
+            System.out.println(element.getInfo());
         }
     }
 
