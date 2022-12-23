@@ -18,7 +18,6 @@ public class Find {
                 if(n.parent.equals(par)){
                     System.out.println(n.name);
                 }
-
             }
         }
     }
@@ -34,8 +33,8 @@ public class Find {
                 if(n.name.equals(name)){
                     findChild(list, n.parent);
                 }
-
             }
+
         }
     }
 
@@ -45,11 +44,9 @@ public class Find {
     public static void findCousins(ArrayList<Knee> list, String name){
 
         for (Knee k: list){
-            for (Node n: k.getList()){
-                if(n.name.equals(name)){
-                    k.printKnee();
-                }
-
+            if (k.containsName(name)){
+                k.printKnee();
+                break;
             }
         }
     }
@@ -75,7 +72,6 @@ public class Find {
                 if(n.name.equals(dad)){
                     System.out.println(n.parent);
                 }
-
             }
         }
 

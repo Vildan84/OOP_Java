@@ -15,9 +15,10 @@ public class FillTree {
 
         ArrayList<Knee> tree = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(filename));
-        ArrayList<String[]> temp = new ArrayList<>();
-        Deque<LinkedList<String>> parents = new LinkedList<>();
-        LinkedList<String> link = new LinkedList<>();
+        LinkedList<String[]> temp = new LinkedList<>();
+        LinkedList<String[]> copyTemp = new LinkedList<>();
+        LinkedList<String> list = new LinkedList<>();
+        Deque<LinkedList<String>> deque = new LinkedList<>();
 
 
         String line;
@@ -25,34 +26,34 @@ public class FillTree {
         while((line= br.readLine()) != null) {
             String[] names = line.split(",");
             temp.add(names);
+            copyTemp.add(names);
         }
+        copyTemp.remove(0);
 
-
+        Knee k = new Knee();
         for(String[] str: temp){
             if(str[0].equals("NULL")){
-                Knee knee = new Knee();
-                knee.addNode(str[0], str[1]);
-                tree.add(knee);
-                link.add(str[1]);
-                parents.add(link);
+                k.addNode(str[0], str[1]);
+                list.add(str[1]);
+                copyTemp.remove(str);
             }
         }
+        tree.add(k);
+        deque.add(list);
 
-        int i = 0;
-
-        while(i < temp.size()){
+        while(!copyTemp.isEmpty()){
             Knee knee = new Knee();
             LinkedList<String> t = new LinkedList<>();
 
             for(String[] str: temp){
-                if(parents.getLast().contains(str[0])){
+                if(deque.getLast().contains(str[0])){
                     knee.addNode(str[0], str[1]);
                     t.add(str[1]);
+                    copyTemp.remove(str);
                 }
             }
-            i++;
             tree.add(knee);
-            parents.addLast(t);
+            deque.add(t);
         }
         return tree;
 

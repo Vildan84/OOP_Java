@@ -10,14 +10,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         FillTree fl = new FillTree();
-        ArrayList<Knee> tree = new ArrayList<>();
+        ArrayList<Knee> tree;
         tree = fl.fill("/home/vildan/IdeaProjects/OOP_Java/Seminar02_Homework/tree.csv");
 
         PrintTree.print(tree);
-//        Find.findCousins(tree, "Petrova Liza");
-//        Find.findGrands(tree, "Ivanova Pavel");
-//        Find.findBroSis(tree, "Sidorova Maria");
-//        Find.findChild(tree, "Ivanova Alla");
+//        Find.findCousins(tree, "Ivanova Alla");
+//        Find.findGrands(tree, "Petrov Ivan");
+//        Find.findBroSis(tree, "Ivanova Alla");
+//        Find.findChild(tree, "Volkova Elena");
 
     }
 }
