@@ -3,8 +3,8 @@ package org.example;
 public class Main {
     public static void main(String[] args){
 
-        Point start = new Point(1, 15, 1);
-        Point finish = new Point(9, 1, -9);
+        Point start = new Point(9, 16, 1);
+        Point finish = new Point(0, 0, -9);
         Way way = new Way();
         Matrix m = new Matrix();
         Logic log = new Logic();
