@@ -7,26 +7,26 @@ package org.example;
 public class Way {
 
     Point step;
-    public Integer[][] wayToStart(Integer[][] matrix, Point finish){
+    public void wayToStart(Integer[][] matrix, Point finish){
 
         int minIndex = 1000;
 
-        if(finish.getCol() - 1 >= 0 && matrix[finish.getRow()][finish.getCol() - 1] >= 0) {
+        if(finish.getCol() - 1 >= 0 && matrix[finish.getRow()][finish.getCol() - 1] > 0) {
             minIndex = matrix[finish.getRow()][finish.getCol() - 1];
             step = new Point(finish.getRow(), finish.getCol() - 1, minIndex);
         }
         if(finish.getRow() - 1 >= 0 && matrix[finish.getRow() - 1][finish.getCol()] < minIndex &&
-                matrix[finish.getRow() - 1][finish.getCol()] >= 0) {
+                matrix[finish.getRow() - 1][finish.getCol()] > 0) {
             minIndex = matrix[finish.getRow() - 1][finish.getCol()];
             step = new Point(finish.getRow() - 1, finish.getCol(), minIndex);
         }
         if(finish.getCol() + 1 < matrix[1].length && matrix[finish.getRow()][finish.getCol() + 1] < minIndex &&
-                matrix[finish.getRow()][finish.getCol() + 1] >= 0){
+                matrix[finish.getRow()][finish.getCol() + 1] > 0){
             minIndex = matrix[finish.getRow()][finish.getCol() + 1];
             step = new Point(finish.getRow(), finish.getCol() + 1, minIndex);
         }
         if(finish.getRow() + 1 < matrix.length && matrix[finish.getRow() + 1][finish.getCol()] < minIndex &&
-                matrix[finish.getRow() + 1][finish.getCol()] >= 0){
+                matrix[finish.getRow() + 1][finish.getCol()] > 0){
             minIndex = matrix[finish.getRow() + 1][finish.getCol()];
             step = new Point(finish.getRow() + 1, finish.getCol(), minIndex);
         }
@@ -54,6 +54,5 @@ public class Way {
             }
             index--;
         }
-        return matrix;
     }
 }

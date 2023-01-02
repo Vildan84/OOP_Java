@@ -1,8 +1,5 @@
 package org.example;
 
-import java.io.BufferedWriter;
-import java.io.Writer;
-
 public class Printer {
 
     public static void printMatrix(Integer[][] matrix){
@@ -17,7 +14,6 @@ public class Printer {
                 else{
                     System.out.print(integers[j] + "  ");
                 }
-
 
             }
             System.out.println("");

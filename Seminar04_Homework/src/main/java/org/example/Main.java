@@ -1,9 +1,7 @@
 package org.example;
 
-import java.io.IOException;
-
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
 
         Point start = new Point(1, 15, 1);
         Point finish = new Point(9, 1, -9);
@@ -15,6 +13,7 @@ public class Main {
         Wall.createHorizontWall(matrix, 3, 6);
         Wall.createVerticalWall(matrix, 15, 5);
         Wall.createVerticalWall(matrix, 2, 5);
+        Wall.createVerticalWall(matrix, 11, 6);
 
         System.out.println("Заполненная матрица");
         log.move(matrix, start);
