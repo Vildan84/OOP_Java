@@ -3,8 +3,8 @@ package org.example;
 public class Main {
     public static void main(String[] args){
 
-        Point start = new Point(9, 16, 1);
-        Point finish = new Point(0, 0, -9);
+        Point start = new Point(0, 0, 1);
+        Point finish = new Point(5, 19, -9);
         Way way = new Way();
         Matrix m = new Matrix();
         Logic log = new Logic();
@@ -24,6 +24,5 @@ public class Main {
         System.out.println("Проложенная дорога");
         way.wayToStart(matrix, finish);
         Printer.printMatrix(matrix);
-
     }
 }

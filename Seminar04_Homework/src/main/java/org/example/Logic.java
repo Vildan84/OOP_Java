@@ -55,7 +55,6 @@ public class Logic {
                 deque.add(new Point(step.getRow() + 1, step.getCol() - 1, step.getIndex() + 1));
             }
         }
-
         return matrix;
     }
 }
