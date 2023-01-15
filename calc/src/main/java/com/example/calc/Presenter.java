@@ -10,11 +10,31 @@ public class Presenter {
     }
 
     public void buttonClick(){
-        int a = view.getValue("a: ");
-        int b = view.getValue("b: ");
+        String tempA = view.getValue("a: ");
+        Double a = ConvertValue.convert(tempA);
+        String sign = view.getSign();
+        String tempB = view.getValue("b: ");
+        Double b = ConvertValue.convert(tempB);
         model.setX(a);
         model.setY(b);
-        int result = model.result();
-        view.print(result, "Sum: ");
+        switch (sign){
+            case ("+") -> {
+                double result = model.plus();
+                view.print(result, "Sum: ");
+            }
+            case ("-") -> {
+                double result = model.minus();
+                view.print(result, "Remain: ");
+            }
+            case ("/") -> {
+                double result = model.divide();
+                view.print(result, "Remain: ");
+            }
+            case ("*") -> {
+                double result = model.multiply();
+                view.print(result, "Result: ");
+            }
+        }
+
     }
 }

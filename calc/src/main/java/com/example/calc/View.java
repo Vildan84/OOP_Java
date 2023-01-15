@@ -2,16 +2,21 @@ package com.example.calc;
 
 import java.util.Scanner;
 
-public class View {
+public class View{
     Scanner in = new Scanner(System.in);
+    String value;
 
-    public int getValue(String title) {
+    public String getValue(String title) {
         System.out.printf("%s", title);
-        return in.nextInt();
+        value = in.next();
+        return value;
     }
 
-    // print(f'{title} = {data}')
-    public void print(int data, String title) {
-        System.out.printf("%s %d\n", title, data);
+    public String getSign(){
+        return in.next();
+    }
+
+    public void print(double data, String title) {
+        System.out.printf("%s %s\n", title, data);
     }
 }

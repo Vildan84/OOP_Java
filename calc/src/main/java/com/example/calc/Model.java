@@ -1,9 +1,12 @@
 package com.example.calc;
 
 public interface Model {
-    int result();
+    double plus();
+    double minus();
+    double divide();
+    double multiply();
 
-    void setX(int value);
+    void setX(double value);
 
-    void setY(int value);
+    void setY(double value);
 }
