@@ -1,22 +1,23 @@
-package com.example.calc;
+package com.example.calc.view;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Scanner;
 
+@Slf4j
 public class View{
     Scanner in = new Scanner(System.in);
-    String value;
 
     public String getValue(String title) {
         System.out.printf("%s", title);
-        value = in.next();
-        return value;
+        return in.nextLine();
     }
 
     public String getSign(){
-        return in.next();
+        return in.nextLine();
     }
 
-    public void print(double data, String title) {
+    public void print(Object data, String title) {
         System.out.printf("%s %s\n", title, data);
     }
 }
