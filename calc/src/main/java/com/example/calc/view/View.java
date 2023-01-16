@@ -10,14 +10,15 @@ public class View{
 
     public String getValue(String title) {
         System.out.printf("%s", title);
-        return in.nextLine();
+        return in.nextLine().replace(" ", "");
     }
 
     public String getSign(){
-        return in.nextLine();
+        return in.nextLine().replace(" ", "");
     }
 
     public void print(Object data, String title) {
+        log.info("result: " + data);
         System.out.printf("%s %s\n", title, data);
     }
 }

@@ -17,12 +17,12 @@ public class Presenter {
     }
 
     public void buttonClick(){
-        String tempA = view.getValue("a: ").replace(" ", "");
+        String tempA = view.getValue("a: ");
         log.info("Entered value: "+ tempA);
         Double a = ConvertValue.convert(tempA);
-        String sign = view.getSign().replace(" ", "");
+        String sign = view.getSign();
         log.info("Entered sign: "+ sign);
-        String tempB = view.getValue("b: ").replace(" ", "");
+        String tempB = view.getValue("b: ");
         log.info("Entered value: "+ tempB);
         Double b = ConvertValue.convert(tempB);
         Calc calc = new Calc(a, b);
@@ -52,7 +52,7 @@ public class Presenter {
         ParseComplexNumber parse = new ParseComplexNumber();
         String tempA = view.getValue("a: ");
         log.info("Entered value: "+ tempA);
-        String sign = view.getSign().replace(" ", "");
+        String sign = view.getSign();
         log.info("Entered sign: "+ sign);
         String tempB = view.getValue("b: ");
         log.info("Entered value: "+ tempB);
@@ -82,7 +82,5 @@ public class Presenter {
             }
             default -> log.info("Wrong sign input " + sign);
         }
-
     }
-
 }

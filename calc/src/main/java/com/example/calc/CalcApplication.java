@@ -37,13 +37,10 @@ public class CalcApplication {
 				}
 				case ("3") -> stop = false;
 
-				default -> {
-					log.info("Wrong sign input " + number);
-				}
+				default -> log.info("Wrong number input " + number);
 			}
 
 		}
-
 
 	}
 

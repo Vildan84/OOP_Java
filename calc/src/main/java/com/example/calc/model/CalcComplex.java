@@ -2,9 +2,9 @@ package com.example.calc.model;
 
 public class CalcComplex implements Model {
 
-    private Double a, b, c, d;
+    public Double a, b, c, d;
 
-    CalcComplex(Double a, Double b, Double c, Double d){
+    public CalcComplex(Double a, Double b, Double c, Double d){
         this.a = a;
         this.b = b;
         this.c = c;
