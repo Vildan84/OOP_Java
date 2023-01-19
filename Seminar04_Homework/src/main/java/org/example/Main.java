@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args){
 
         Point start = new Point(0, 0, 1);
-        Point finish = new Point(5, 19, -9);
+        Point finish = new Point(9, 15, -9);
         Way way = new Way();
         Matrix m = new Matrix();
         Logic log = new Logic();
