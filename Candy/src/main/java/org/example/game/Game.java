@@ -52,7 +52,7 @@ public class Game {
                     winNumber = 1;
                 }
         }
-        System.out.println("////////////////////");
+        System.out.println("/////////////////////////////////");
         System.out.println(view.win(names[winNumber]));
     }
 }
